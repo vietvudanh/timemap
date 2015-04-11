@@ -1,0 +1,69 @@
+<html>
+
+<head>
+
+  <title>Timemap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/ol.css">
+
+</head>
+
+<body>
+
+  <div class="container-fluid main">
+    <div class="row header">
+      <div class="col-lg-6 col-xs-6 search-box">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+        <button class="btn btn-md" type="button">Search</button>
+      </span>
+        </div>
+      </div>
+      <div class="col-lg-6 col-xs-6 slidebar">
+        <div class="col-lg-3 year-box">
+          <div>Current year: <span id="year-box"></span>
+          <input type="text" class="" id="year-input">
+          </div>
+        </div>
+        <div class="col-lg-9 slider">
+          <input id="year-slider" type="range" min="1900" max="2015" value="2015" />
+        </div>
+      </div>
+    </div>
+    <div class="row footer">
+      <div class="control">
+        <button id="center" class="btn btn-sm btn-success">Get Center</button>
+        <botton id="add-feat" class="btn btn-sm btn-danger">Add Feat</botton>
+        <button id="pan-to" class="btn btn-sm btn-primary">Pan</button>
+        <select id="layer-select">
+          <option value="Aerial">Aerial</option>
+          <option selected="" value="AerialWithLabels">Aerial with labels</option>
+          <option value="Road">Road</option>
+          <option value="collinsBart">Collins Bart</option>
+          <option value="ordnanceSurvey">Ordnance Survey</option>
+        </select>
+        <input type="text" id="feat-lon">
+        <input type="text" id="feat-lat">
+        <select id="place-select"></select>
+      </div>
+      <div id="log"></div>
+    </div>
+    <div class="row main">
+      <div id="map"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/ol.js"></script>
+  <script type="text/javascript" src="js/date.js"></script>
+  <script type="text/javascript" src="js/map.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+
+</body>
+
+</html>
