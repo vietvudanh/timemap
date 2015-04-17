@@ -5,8 +5,13 @@
  */
 
 //map
-var map = null
-var layers = [];
+var Map = {};
+Map.map = null;
+Map.layers = [];
+
+//popup
+element = null;
+popup = null;
 
 //style for Bing map
 var styles = [
@@ -27,7 +32,7 @@ var styles = [
 // add Bing's map layers
 // ---------------------
 for (var i = 0; i < styles.length; ++i) {
-  layers.push(new ol.layer.Tile({
+  Map.layers.push(new ol.layer.Tile({
     visible: false,
     preload: Infinity,
     source: new ol.source.BingMaps({
@@ -64,69 +69,79 @@ var vectorSource = new ol.source.Vector({
 var vectorLayer = new ol.layer.Vector({
   source: vectorSource
 });
-layers.push(vectorLayer);
+Map.layers.push(vectorLayer);
 
 // add Bing's map change listener
 $('#layer-select').change(function () {
   var style = $(this).find(':selected').val();
   var i, ii;
-  for (i = 0, ii = layers.length; i < ii; ++i) {
-    layers[i].setVisible(i == 5 || styles[i] == style);
+  for (i = 0, ii = Map.layers.length; i < ii; ++i) {
+    Map.layers[i].setVisible(i == 5 || styles[i] == style);
   }
 });
 $('#layer-select').trigger('change');
 
 //get current lon, lat, zoom
-function getCurrentLonLatZoom() {
+Map.getCurrentLonLatZoom = function() {
   return {
-    'center': mapTransform2(map.getView().getCenter()),
-    'zoom': map.getView().getZoom()
+    'center': mapTransform2(Map.map.getView().getCenter()),
+    'zoom': Map.map.getView().getZoom()
   }
 }
 
 //transform 'EPSG:4326' to  'EPSG:3857'
-function mapTransform1(lonlat) {
+Map.mapTransform1 = function(lonlat) {
   return ol.proj.transform(lonlat, 'EPSG:4326', 'EPSG:3857')
 }
 
 //transform 'EPSG:3857' to 'EPSG:4326'
-function mapTransform2(lonlat) {
+Map.mapTransform2 = function (lonlat) {
   return ol.proj.transform(lonlat, 'EPSG:3857', 'EPSG:4326')
 }
 
 //add features
-function addFeature(lonlat, description) {
+Map.addFeature = function(lonlat, description) {
   var iconFeature = new ol.Feature({
     geometry: new ol.geom.Point(lonlat),
     name: description
   });
   iconFeature.setStyle(iconStyle);
   vectorSource.addFeature(iconFeature);
-  map.render();
+  Map.map.render();
 }
 
 // clear features
-function clearFeatures() {
+Map.clearFeatures = function() {
   vectorSource.clear();
 }
 
 //add map
-function addMap() {
-  map = new ol.Map({
-    target: 'map',
-    layers: layers,
+Map.addMap = function() {
+  Map.map = new ol.Map({
+    target: document.getElementById('map'),
+    layers: Map.layers,
     loadTilesWhileInteracting: true,
     view: new ol.View({
-      center: mapTransform1([105.785, 21.035]),
+      center: Map.mapTransform1([105.785, 21.035]),
       zoom: 16
     })
   });
+  
+  element = document.getElementById('popup');
+  popup = new ol.Overlay({
+    element: element,
+    positioning: 'bottom-center',
+    stopEvent: false
+  });
+  Map.map.addOverlay(popup);
+  Map.mapClick();
+  Map.mapHover();
 }
 
 // mapClick
-function mapClick() {
-  map.on('click', function (evt) {
-    var feature = map.forEachFeatureAtPixel(evt.pixel,
+Map.mapClick = function() {
+  Map.map.on('click', function (evt) {
+    var feature = Map.map.forEachFeatureAtPixel(evt.pixel,
       function (feature, layer) {
         return feature;
       });
@@ -146,12 +161,26 @@ function mapClick() {
   });
 }
 
+//maphover
+Map.mapHover = function(){
+  // change mouse cursor when over marker
+  Map.map.on('pointermove', function(e) {
+    if (e.dragging) {
+      $(element).popover('destroy');
+      return;
+    }
+    var pixel = Map.map.getEventPixel(e.originalEvent);
+    var hit = Map.map.hasFeatureAtPixel(pixel);
+    Map.map.getTarget().style.cursor = hit ? 'pointer' : '';
+  });
+}
+
 // panto map
-function panTo(lonlat) {
+Map.panTo = function(lonlat) {
   var pan = ol.animation.pan({
     duration: 2000,
-    source: /** @type {ol.Coordinate} */ (map.getView().getCenter())
+    source: /** @type {ol.Coordinate} */ (Map.map.getView().getCenter())
   });
-  map.beforeRender(pan);
-  map.getView().setCenter(mapTransform1(lonlat));
+  Map.map.beforeRender(pan);
+  Map.map.getView().setCenter(Map.mapTransform1(lonlat));
 }

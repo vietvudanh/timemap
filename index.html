@@ -22,38 +22,41 @@
         <button class="btn btn-md" type="button">Search</button>
       </span>
         </div>
+        <label for="layer-select">Select layer</label>
+        <select id="layer-select">
+          <option value="Aerial">Aerial</option>
+          <option value="AerialWithLabels">Aerial with labels</option>
+          <option selected="" value="Road">Road</option>
+          <option value="collinsBart">Collins Bart</option>
+          <option value="ordnanceSurvey">Ordnance Survey</option>
+        </select>
       </div>
       <div class="col-lg-6 col-xs-6 slidebar">
         <div class="col-lg-3 year-box">
-          <div>Current year: <span id="year-box"></span>
           <input type="text" class="" id="year-input">
-          </div>
         </div>
         <div class="col-lg-9 slider">
-          <input id="year-slider" type="range" min="1900" max="2015" value="2015" />
+         <label for="year-slider">Current year:<span id="year-box">2002</span></label>
+          <input id="year-slider" type="range" min="1900" max="2015" value="2002" />
+          <label for="window-slider">Window size: <span id="window-size">3</span> </label>
+          <input id="window-slider" type="range" min="0" max="10" value="3" />
         </div>
       </div>
     </div>
     <div class="row footer">
       <div class="control">
+        <!--
         <button id="center" class="btn btn-sm btn-success">Get Center</button>
         <botton id="add-feat" class="btn btn-sm btn-danger">Add Feat</botton>
         <button id="pan-to" class="btn btn-sm btn-primary">Pan</button>
-        <select id="layer-select">
-          <option value="Aerial">Aerial</option>
-          <option selected="" value="AerialWithLabels">Aerial with labels</option>
-          <option value="Road">Road</option>
-          <option value="collinsBart">Collins Bart</option>
-          <option value="ordnanceSurvey">Ordnance Survey</option>
-        </select>
-        <input type="text" id="feat-lon">
-        <input type="text" id="feat-lat">
-        <select id="place-select"></select>
+        -->
       </div>
       <div id="log"></div>
     </div>
     <div class="row main">
-      <div id="map"></div>
+      <div id="map" class="map">
+        <div id="popup"></div>
+      </div>
     </div>
   </div>
 

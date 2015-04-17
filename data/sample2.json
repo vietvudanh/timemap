@@ -1,0 +1,156 @@
+[{
+    "id": "1",
+    "type": "place",
+    "events": [{
+        "id": "1",
+        "type": "events",
+        "time": "1906-05-16",
+        "name": "Đại học Đông Dương",
+        "description": "Thành lập",
+        "lon": "105.85839306547034",
+        "lat": "21.020388921983592",
+        "keywords":""
+    }, {
+        "id": "2",
+        "type": "events",
+        "time": "1945-11-15",
+        "name": "Trường Đại học Quốc gia Hà Nội",
+        "description": "Đổi tên",
+        "lon": "105.85839306547034",
+        "lat": "21.020388921983592",
+        "keywords":""
+    }, {
+        "id": "3",
+        "type": "events",
+        "time": "1956-06-04",
+        "name": "Trường Đại học Tổng hợp Hà Nội",
+        "description": "Đổi tên",
+        "lon": "105.85839306547034",
+        "lat": "21.020388921983592",
+        "keywords":""
+    }, {
+        "id": "4",
+        "type": "events",
+        "time": "1993-01-14",
+        "name": "Đại học Quốc gia Hà Nội",
+        "description": "Đổi tên",
+        "lon": "105.85839306547034",
+        "lat": "21.020388921983592",
+        "keywords":""
+    }, {
+        "id": "5",
+        "type": "events",
+        "time": "2000-01-01",
+        "name": "Đại học Quốc gia Hà Nội",
+        "description": "Đổi địa điểm",
+        "lon": "105.78169395758414",
+        "lat": "21.037598469677732",
+        "keywords":""
+    }, {
+        "id": "6",
+        "type": "events",
+        "time": "1995-02-11",
+        "name": "Khoa Công nghệ thông tin",
+        "description": "Thành lập",
+        "lon": "105.80818211268976",
+        "lat": "20.9960733578081",
+        "keywords":""
+    }]
+}, {
+    "id": "2",
+    "type": "place",
+    "events": [{
+        "id": "6",
+        "type": "events",
+        "time": "1995-02-11",
+        "name": "Khoa Công nghệ thông tin",
+        "description": "Thành lập",
+        "lon": "105.80818211268976",
+        "lat": "20.9960733578081",
+        "keywords":""
+    }, {
+        "id": "7",
+        "type": "events",
+        "time": "2014-10-03",
+        "name": "Khoa Công nghệ - Điện tử viễn thông",
+        "description": "Thành lập",
+        "lon": "105.80818211268976",
+        "lat": "20.9960733578081",
+        "keywords":""
+    }, {
+        "id": "8",
+        "time": "1999-10-18",
+        "name": "Khoa Công nghệ",
+        "description": "Tái tổ chức, xác nhập 2 khoa cũ",
+        "lon": "105.80818211268976",
+        "lat": "20.9960733578081",
+        "keywords":""
+    }, {
+        "id": "9",
+        "type": "events",
+        "time": "2004-05-25",
+        "name": "Trường Đại học Công nghệ",
+        "description": "Thành lập",
+        "lon": "105.78292240929592",
+        "lat": "21.03829692404091",
+        "keywords":""
+    }]
+}, {
+    "id": "3",
+    "type": "place",
+    "events": [{
+        "id": "1",
+        "type": "events",
+        "time": "1906-05-16",
+        "name": "Đại học Đông Dương",
+        "description": "Thành lập",
+        "lon": "105.85839306547034",
+        "lat": "21.020388921983592",
+        "keywords":""
+    }, {
+        "id": "2",
+        "type": "events",
+        "time": "1945-11-15",
+        "name": "Trường Đại học Quốc gia Hà Nội",
+        "description": "Đổi tên",
+        "lon": "105.85839306547034",
+        "lat": "21.020388921983592",
+        "keywords":""
+    }, {
+        "id": "3",
+        "type": "events",
+        "time": "1956-06-04",
+        "name": "Trường Đại học Tổng hợp Hà Nội",
+        "description": "Đổi tên",
+        "lon": "105.85839306547034",
+        "lat": "21.020388921983592",
+        "keywords":""
+    }, {
+        "id": "4",
+        "type": "events",
+        "time": "1993-01-14",
+        "name": "Đại học Quốc gia Hà Nội",
+        "description": "Đổi tên",
+        "lon": "105.85839306547034",
+        "lat": "21.020388921983592",
+        "keywords":""
+    }, {
+        "id": "5",
+        "type": "events",
+        "time": "2000-01-01",
+        "name": "Đại học Quốc gia Hà Nội",
+        "description": "Đổi địa điểm",
+        "lon": "105.78169395758414",
+        "lat": "21.037598469677732",
+        "keywords":""
+    }, {
+        "id": "6",
+        "type": "events",
+        "time": "1995-02-11",
+        "name": "Khoa Công nghệ thông tin",
+        "description": "Thành lập",
+        "lon": "105.80818211268976",
+        "lat": "20.9960733578081",
+        "keywords":""
+    }]
+}]

@@ -1,4 +1,5 @@
- function getDateTime() {
+//get current datetime
+function getDateTime() {
     var now     = new Date(); 
     var year    = now.getFullYear();
     var month   = now.getMonth()+1; 

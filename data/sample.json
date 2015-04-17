@@ -2,72 +2,72 @@
     "id": "1",
     "place_id": "1",
     "time": "1906-05-16",
-    "name": "\u0110\u1ea1i h\u1ecdc \u0110\u00f4ng D\u01b0\u01a1ng",
-    "description": "Th\u00e0nh l\u1eadp",
+    "name": "Đại học Đông Dương",
+    "description": "Thành lập",
     "lon": "105.85839306547034",
     "lat": "21.020388921983592"
 }, {
     "id": "2",
     "place_id": "1",
     "time": "1945-11-15",
-    "name": "Tr\u01b0\u1eddng \u0110\u1ea1i h\u1ecdc Qu\u1ed1c gia H\u00e0 N\u1ed9i",
-    "description": "\u0110\u1ed5i t\u00ean",
+    "name": "Trường Đại học Quốc gia Hà Nội",
+    "description": "Đổi tên",
     "lon": "105.85839306547034",
     "lat": "21.020388921983592"
 }, {
     "id": "3",
     "place_id": "1",
     "time": "1956-06-04",
-    "name": "Tr\u01b0\u1eddng \u0110\u1ea1i h\u1ecdc T\u1ed5ng h\u1ee3p H\u00e0 N\u1ed9i",
-    "description": "\u0110\u1ed5i t\u00ean",
+    "name": "Trường Đại học Tổng hợp Hà Nội",
+    "description": "Đổi tên",
     "lon": "105.85839306547034",
     "lat": "21.020388921983592"
 }, {
     "id": "4",
     "place_id": "1",
     "time": "1993-01-14",
-    "name": "\u0110\u1ea1i h\u1ecdc Qu\u1ed1c gia H\u00e0 N\u1ed9i",
-    "description": "\u0110\u1ed5i t\u00ean",
+    "name": "Đại học Quốc gia Hà Nội",
+    "description": "Đổi tên",
     "lon": "105.85839306547034",
     "lat": "21.020388921983592"
 }, {
     "id": "5",
     "place_id": "1",
     "time": "2000-01-01",
-    "name": "\u0110\u1ea1i h\u1ecdc Qu\u1ed1c gia H\u00e0 N\u1ed9i",
-    "description": "\u0110\u1ed5i \u0111\u1ecba \u0111i\u1ec3m",
+    "name": "Đại học Quốc gia Hà Nội",
+    "description": "Đổi địa điểm",
     "lon": "105.78169395758414",
     "lat": "21.037598469677732"
 }, {
     "id": "6",
     "place_id": "2",
     "time": "1995-02-11",
-    "name": "Khoa C\u00f4ng ngh\u1ec7 th\u00f4ng tin",
-    "description": "Th\u00e0nh l\u1eadp",
+    "name": "Khoa Công nghệ thông tin",
+    "description": "Thành lập",
     "lon": "105.80818211268976",
     "lat": "20.9960733578081"
 }, {
     "id": "7",
     "place_id": "2",
     "time": "2014-10-03",
-    "name": "Khoa C\u00f4ng ngh\u1ec7 - \u0110i\u1ec7n t\u1eed vi\u1ec5n th\u00f4ng",
-    "description": "Th\u00e0nh l\u1eadp",
+    "name": "Khoa Công nghệ - Điện tử viễn thông",
+    "description": "Thành lập",
     "lon": "105.80818211268976",
     "lat": "20.9960733578081"
 }, {
     "id": "8",
     "place_id": "2",
     "time": "1999-10-18",
-    "name": "Khoa C\u00f4ng ngh\u1ec7",
-    "description": "T\u00e1i t\u1ed5 ch\u1ee9c, x\u00e1c nh\u1eadp 2 khoa c\u0169",
+    "name": "Khoa Công nghệ",
+    "description": "Tái tổ chức, xác nhập 2 khoa cũ",
     "lon": "105.80818211268976",
     "lat": "20.9960733578081"
 }, {
     "id": "9",
     "place_id": "2",
     "time": "2004-05-25",
-    "name": "Tr\u01b0\u1eddng \u0110\u1ea1i h\u1ecdc C\u00f4ng ngh\u1ec7",
-    "description": "Th\u00e0nh l\u1eadp",
+    "name": "Trường Đại học Công nghệ",
+    "description": "Thành lập",
     "lon": "105.78292240929592",
     "lat": "21.03829692404091"
 }]
