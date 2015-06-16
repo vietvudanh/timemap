@@ -1,11 +1,21 @@
+/** =================
+ Main logic file
+  Controller of system
+ Timemap project
+ @author: Viet Vu Danh
+ *===================/
+
 /**
  * =================
  * variables
  * =================
  */
-var year = null; // current year
-var places = null; // places list
-var windowSize = null; // time window
+// main namespace
+var Main = {}; // namespace
+Main.year = null; // current year
+//Main.places = null; // places list
+Main.windowSize = null; // time window
+Main.eventsToBeDrawn = {}; // eventsToBeDrawn
 
 /**
  * =================
@@ -13,39 +23,64 @@ var windowSize = null; // time window
  * =================
  */
 $(document).ready(function () {
-  addListener();
+  Main.init();
+  Main.addListener();
   Map.addMap();
-  init();
-  getData();
+  //  Main.getData();
+  DB.queryByTime((new Date('1980-01-01')), 4);
 });
 
 //init
-function init() {
-  year = 2002;
-  $('#year-box').text(year);
+Main.init = function () {
+  Main.year = parseInt($('#year-slider').val());
+  Main.windowSize = parseInt($('#window-slider').val());
+
+  $('#year-box').text(Main.year);
   $('#feat-lon').val(105.785);
   $('#feat-lat').val(21.035);
 }
 
 //add listeners
-function addListener() {
+Main.addListener = function () {
 
   //slider
   $('#year-slider').on('input', function () {
-    year = $(this).val();
-    $('#year-box').text(year);
-    drawFeatures();
+    Main.year = parseInt($(this).val());
+    $('#year-box').text(Main.year);
+    Main.drawFeatures();
   });
   $('#year-input').change(function () {
-    year = $(this).val();
-    $('#year-box').text(year);
-    drawFeatures();
+    Main.year = parseInt($(this).val());
+    $('#year-box').text(Main.year);
+    Main.drawFeatures();
   });
   $('#window-slider').on('input', function () {
-    windowSize = $(this).val();
+    Main.windowSize = parseInt($(this).val());
     console.log();
-    $('#window-size').text(windowSize);
-    drawFeatures();
+    $('#window-size').text(Main.windowSize);
+    Main.drawFeatures();
+  });
+  
+  //search
+  $('#search-box').on('keyup', function(){
+    var text = $.trim($(this).val().toLowerCase());
+    $.each(Main.eventsToBeDrawn, function(i, element){
+      var event = element.event;
+      if( event.name.toLowerCase().indexOf(text) != -1 || 
+          event.description.toLowerCase().indexOf(text) != -1 || 
+          event.time.toLowerCase().indexOf(text) != -1)
+      {
+        element.display = true;
+      }
+      else if(text == ''){
+        element.display = true;
+      }
+      else{
+        element.display = false;
+      }
+    });
+    Main.drawFeatures2();
+    
   });
 
   //control
@@ -68,49 +103,72 @@ function addListener() {
 }
 
 //log
-function log(msg) {
+Main.log = function (msg) {
   $('<div>', {
     text: getDateTime() + ' >> ' + msg
   }).appendTo('#log');
 }
 
 // get data
-function getData() {
-  $.ajax({
-    type: "get",
-    dataType: 'json',
-    url: 'data/sample2.json',
-    success: function (data) {
-      places = data;
-//      $.each(places, function (index, place) {
-//        $('<option/>', {
-//          value: place.id,
-//          text: place.name
-//        }).appendTo('#place-select');
-//      });
-    },
-    error: function (e) {
-      alert("Error in loading data");
-    }
-  });
+//Main.getData = function () {
+//  $.ajax({
+//    type: "get",
+//    dataType: 'json',
+//    url: 'data/sample2.json',
+//    success: function (data) {
+//      Main.places = data;
+//      Main.drawFeatures();
+//      //      $.each(places, function (index, place) {
+//      //        $('<option/>', {
+//      //          value: place.id,
+//      //          text: place.name
+//      //        }).appendTo('#place-select');
+//      //      });
+//    },
+//    error: function (e) {
+//      alert("Error in loading data");
+//    }
+//  });
+//}
+
+// draw features
+// clear and redraw features on the map
+Main.drawFeatures = function () {
+  console.log(Main.places);
+
+  Map.clearFeatures(); // clear the markers
+  delete Main.eventsToBeDrawn; // clear the current locations track
+  Main.eventsToBeDrawn = {}; // create new objects
+  
+  Main.eventsToBeDrawn = DB.getCurrentState(Main.places, Main.year, Main.windowSize);
+  
+  console.log(Main.eventsToBeDrawn);
+  // add feature
+  for (key in Main.eventsToBeDrawn) {
+    var location = Main.eventsToBeDrawn[key];
+    Map.addFeature(
+      Map.mapTransform1([parseFloat(location.event.lon), parseFloat(location.event.lat)]),
+      location.event,
+      location.event.icon);
+  }
 }
 
 // draw features
 // clear and redraw features on the map
-function drawFeatures() {
-  Map.clearFeatures();
+Main.drawFeatures2 = function () {
+  console.log(Main.places);
 
-  // iterrate through places
-  $.each(places, function (i, place){
-    // iterrate through events
-    $.each(place.events, function (j, event) {
-      // get date of data
-      var date = new Date(event.time);
-      // filter for events sastify time window
-      if (date.getFullYear() >= (parseInt(year) - windowSize) && date.getFullYear() <= parseInt(year) + windowSize) {
-        // add featture to map
-        Map.addFeature(Map.mapTransform1([parseFloat(event.lon), parseFloat(event.lat)]), i + '.' + event.name);
-      }
-    });
-  });
+  Map.clearFeatures(); // clear the markers
+  
+  console.log(Main.eventsToBeDrawn);
+  // add feature
+  for (key in Main.eventsToBeDrawn) {
+    var location = Main.eventsToBeDrawn[key];
+    if(location.display){
+      Map.addFeature(
+        Map.mapTransform1([parseFloat(location.event.lon), parseFloat(location.event.lat)]),
+        location.event,
+        location.event.icon);
+    }
+  }
 }

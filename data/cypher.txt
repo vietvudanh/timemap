@@ -1,0 +1,27 @@
+//create nodes
+
+LOAD CSV WITH HEADERS FROM "http://localhost/timemap/data/nodes.csv" AS csvLine
+CREATE (p:Event { 
+id: toInt(csvLine.id), 
+time: csvLine.time,
+name: csvLine.name,
+description: csvLine.description,
+lon: toFloat(csvLine.lon),
+lat: toFloat(csvLine.lat),
+keywords: csvLine.keywords,
+icon: csvLine.icon});
+
+//create CHANGE_NAME
+LOAD CSV WITH HEADERS FROM "http://localhost/timemap/data/rels_name.csv" AS csvLine
+MATCH (n1:Event{id: toInt(csvLine.from)}), (n2:Event{id: toInt(csvLine.to)})
+CREATE (n1)-[:CHANGE_NAME]->(n2);
+
+//create CHANGE_LOCATION
+LOAD CSV WITH HEADERS FROM "http://localhost/timemap/data/rels_loc.csv" AS csvLine
+MATCH (n1:Event{id: toInt(csvLine.from)}), (n2:Event{id: toInt(csvLine.to)})
+CREATE (n1)-[:CHANGE_LOCATION]->(n2);
+
+//create CHILD
+LOAD CSV WITH HEADERS FROM "http://localhost/timemap/data/rels_child.csv" AS csvLine
+MATCH (n1:Event{id: toInt(csvLine.from)}), (n2:Event{id: toInt(csvLine.to)})
+CREATE (n1)-[:CHILD{description: csvLine.description}]->(n2);

@@ -17,10 +17,10 @@
     <div class="row header">
       <div class="col-lg-6 col-xs-6 search-box">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search for...">
+          <input type="text" class="form-control" placeholder="Search for..." id="search-box">
           <span class="input-group-btn">
-        <button class="btn btn-md" type="button">Search</button>
-      </span>
+            <button class="btn btn-md" type="button">Search</button>
+          </span>
         </div>
         <label for="layer-select">Select layer</label>
         <select id="layer-select">
@@ -30,16 +30,26 @@
           <option value="collinsBart">Collins Bart</option>
           <option value="ordnanceSurvey">Ordnance Survey</option>
         </select>
+        <!-- Button trigger modal -->
+<!--
+        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">
+          Timeline
+        </button>
+-->
       </div>
       <div class="col-lg-6 col-xs-6 slidebar">
-        <div class="col-lg-3 year-box">
+        <!--
+        <div class="col-lg-4 year-box">
           <input type="text" class="" id="year-input">
         </div>
-        <div class="col-lg-9 slider">
-         <label for="year-slider">Current year:<span id="year-box">2002</span></label>
-          <input id="year-slider" type="range" min="1900" max="2015" value="2002" />
-          <label for="window-slider">Window size: <span id="window-size">3</span> </label>
-          <input id="window-slider" type="range" min="0" max="10" value="3" />
+-->
+        <div class="col-lg-8 slider">
+          <label for="year-slider">Current year:<span id="year-box">2002</span>
+          </label>
+          <input id="year-slider" type="range" min="1900" max="2015" value="1900" />
+          </br>
+          <label for="window-slider">Window size: <span id="window-size">0</span> </label>
+          <input id="window-slider" type="range" min="0" max="10" value="0" />
         </div>
       </div>
     </div>
@@ -58,6 +68,27 @@
         <div id="popup"></div>
       </div>
     </div>
+  </div <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel"><span id='modal-title'></span></h4>
+        </div>
+        <div class="modal-body">
+          <center>
+          <div id="modal-body">
+            
+          </div>
+          </center>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
@@ -65,6 +96,7 @@
   <script type="text/javascript" src="js/ol.js"></script>
   <script type="text/javascript" src="js/date.js"></script>
   <script type="text/javascript" src="js/map.js"></script>
+  <script type="text/javascript" src="js/db_handler.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
 
 </body>

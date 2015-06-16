@@ -1,0 +1,21 @@
+id,time,name,description,lon,lat,keywords,icon
+1,1906-05-16,Đại học Đông Dương,Thành lập,105.85839306547034,21.020388921983592,vnu1,vnu
+2,1945-11-15,Trường Đại học Quốc gia Hà Nội,Đổi tên,105.85839306547034,21.020388921983592,vnu2,vnu
+3,1956-06-04,Trường Đại học Tổng hợp Hà Nội,Đổi tên,105.85839306547034,21.020388921983592,vnu3,vnu
+4,1993-01-14,Đại học Quốc gia Hà Nội,Đổi tên,105.85839306547034,21.020388921983592,vnu4,vnu
+5,2000-01-01,Đại học Quốc gia Hà Nội,Đổi địa điểm/tên,105.78169395758414,21.037598469677732,vnu5,vnu
+6,1995-02-11,Khoa Công nghệ thông tin,Thành lập Khoa Công nghệ Thông tin thuộc Trường Đại KHTN ĐHQGHN,105.80818211268976,20.9960733578081,uet1,uet
+7,1996-11-03,Khoa Công nghệ - Điện tử viễn thông ĐHKHTN ĐHQGHN,Thành lập,105.80818211268976,20.9960733578081,uet2,uet
+8,1999-10-18,Khoa Công nghệ ĐHQGHN,Giám đốc ĐHQGHN đã ký quyết định số 1348/TCCB thành lập Khoa Công nghệ trên cơ sở sắp xếp; tổ chức lại Khoa CNTT và Khoa CN ĐT-VT thuộc Trường Đại học Khoa học Tự nhiên thành hai ngành thuộc Khoa Công nghệ. Cùng với sự ra đời của Khoa Công nghệ; ĐHQGHN đã thành lập Trung tâm Hợp tác Đào tạo và Bồi dưỡng cơ học trực thuộc ĐHQGHN.,105.80818211268976,20.9960733578081,uet3,uet
+9,2004-05-25,Trường Đại học Công nghệ,Thủ tướng Chính phủ đã ký quyết định số 92/2004/QĐ-TTg thành lập Trường ĐHCN trên cơ sở khoa Công nghệ và Trung tâm Hợp tác Đào tạo và Bồi dưỡng Cơ học thuộc ĐHQGHN,105.78256404959617,21.0382513433171,uet4,uet
+10,1974-11-1,Khoa Kinh tế chính trị,Khoa Kinh tế Chính trị trực thuộc Trường Đại học Tổng hợp Hà Nội,105.80721674869133,20.99535556717622,ueb1,ueb
+11,1995-9-1,Khoa Kinh tế,Khoa Kinh tế trực thuộc Trường Đại học Khoa học Xã hội và Nhân văn - ĐHQGHN,105.80721674869133,20.99535556717622,ueb2,ueb
+12,1997-7-1,Khoa Kinh tế,Khoa Kinh tế trực thuộc ĐHQGHN,105.78275184832438,21.038089674850156,ueb3,ueb
+13,2007-3-1,Đại học Kinh tế,Trường Đại học Kinh tế trực thuộc ĐHQGHN,105.78275184832438,21.038089674850156,ueb4,ueb
+14,1945-10-10,Đại học Văn Khoa Hà Nội,,105.80753217547745,20.99547001448586,ussh1,ussh
+15,1993-12-10,Đại học Khoa học Xã hội và Nhân văn ĐHQGHN,,105.80753217547745,20.99547001448586,ussh2,ussh
+16,1993-12-10,Đại học Khoa học tự nhiên ĐHQGHN,,105.80801497310013,20.995820592809736,hus1,hus
+17,1967-01-01,Trường Đại học Sư phạm Ngoại ngữ Hà Nội,,105.78136992581557, 21.038412420591825,ulis1,ulis
+18,1993-12-10,Đại học Ngoại ngữ ĐHQGHN,,105.78136992581557,21.038412420591825,ulis2,ulis
+19,1999-12-22,Khoa Sư phạm ĐHQGHN,,105.78130224652715,21.037947193976677,ued1,ued
+20,2009-04-03,Đại học Giáo dục ĐHQGHN,,105.78130224652715, 21.037947193976677,ued2,ued
