@@ -14,7 +14,7 @@ System modeling data using graph theory, to show relationships between data of h
 Enjoy!
 
 # Documents
-My [thesis](raw/master/assets/thesis.pdf), [presentation slide](raw/master/assets/slide.pdf)
+My [thesis](/raw/master/assets/thesis.pdf), [presentation slide](/raw/master/assets/slide.pdf)
 
 # Demo
 Demo is available [Here](https://github.com/vietvudanh/timemap), without the backend database.
